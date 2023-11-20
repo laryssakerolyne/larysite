@@ -1,37 +1,23 @@
-body{
-    transition: background-color, 1s;
-    animation: arco-iris 5s infinite;
+/* animação para webkit */
+@-webkit-keyframes fundocor {
+    0%   {background: orange;}
+    25%  {background: red;}
+    50%  {background: green;}
+    100% {background: blue;}
 }
 
-@keyframes arco-iris{
-    0%{
-        background-color: rgb(10, 13, 51); 
-    }
-    10%{
-        background-color: rgb(159, 173, 185);
-    }
-    20%{
-        background-color: rgb(80, 235, 255);
-    }
-    40%{
-        background-color: rgb(0, 119, 255);
-    }
-    50%{
-        background-color: rgb(34, 32, 138);
-    }
-    60%{
-        background-color: rgb(25, 33, 104); 
-    }
-    70%{
-        background-color: rgb(12, 15, 58); 
-    }
-    80%{
-        background-color: rgb(10, 13, 51); 
-    }
-    90%{
-        background-color: rgb(5, 7, 26); 
-    }
-    100%{
-        background-color: rgb(0, 0, 0); 
-    }
+/* animação padrão */
+@keyframes fundocor {
+    0%   {background: orange;}
+    25%  {background: red;}
+    50%  {background: green;}
+    100% {background: blue;}
 }
+
+/* executa a chamada da animação no body */
+body{
+-webkit-animation: fundocor 5s linear 2s infinite alternate; /* chamada para Chrome, Safari, Opera */
+    animation: fundocor 5s linear 2s infinite alternate; /* chamada padrão */
+}
+
+
